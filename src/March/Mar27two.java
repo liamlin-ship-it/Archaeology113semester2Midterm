@@ -8,10 +8,12 @@ public class Mar27two {
         farewellUser();
     }
 
+    //we don't need to pass any data back to the main method
     public static void greetUser(){
         System.out.println("Hello! Welcome to the program.");
     }
 
+    //we don't need to pass any data back to the main method
     public static void farewellUser(){
         System.out.println("Enter your name:");
         Scanner scanner = new Scanner(System.in);
