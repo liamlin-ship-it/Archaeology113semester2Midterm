@@ -8,23 +8,21 @@ public class MidtermTwo {
         int choice = scanner.nextInt();
 
         if (choice == 1){
-            int n = scanner.nextInt();
-            int result1 = cubeVolume(n);
-            System.out.println(result1);
-        }else {
             int length = scanner.nextInt();
-            int width = scanner.nextInt();
-            int height = scanner.nextInt();
-            int result2 = boxVolume(length, width, height);
-            System.out.println(result2);
+            System.out.println(cubeVolume(length));
+        }else {
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            int c = scanner.nextInt();
+            System.out.println(boxVolume(a, b, c));
         }
     }
 
-    public static int cubeVolume(int n){
-        return n * n * n;
+    public static int cubeVolume(int length) {
+        return length * length * length;
     }
 
-    public static int boxVolume(int length, int width, int height){
-        return length * width * height;
+    public static int boxVolume(int a, int b, int c) {
+        return a * b * c;
     }
 }
