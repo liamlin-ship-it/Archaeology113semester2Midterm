@@ -18,11 +18,11 @@ public class MidtermFiv {
     }
 
     public static int calculateFrequencyRange(int[] numbers){
-        int count = 0;
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
         for (int i = 0; i < numbers.length; i++){
+            int count = 0;
             for (int j = 0; j < numbers.length; j++){
                 if (numbers[i] == numbers[j]){
                     count++;
