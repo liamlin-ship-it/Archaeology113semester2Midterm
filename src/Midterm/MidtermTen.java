@@ -21,6 +21,8 @@ public class MidtermTen {
     }
 
     //Changes rows and saves the results
+    //Since we only need one range number per row,
+    //a 1D array is the right choice!
     public static int[] calculateMatrixRowRanges(int[][] matrix) {
         int[] result = new int[matrix.length];
 
