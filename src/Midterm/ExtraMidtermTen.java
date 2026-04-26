@@ -1,6 +1,6 @@
 package Midterm;
 
-//calculate the max subtract min of each column
+//getValue the max subtract min of each column
 
 import java.util.Scanner;
 
