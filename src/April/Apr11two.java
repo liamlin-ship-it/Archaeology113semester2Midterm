@@ -7,22 +7,24 @@ public class Apr11two {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
 
-        int sum = digitSum(n);
-        System.out.print(sum + " ");
-        System.out.println(isMultipleOfSeven(sum));
+        if (isMultipleOfSeven(n)){
+            System.out.println(digitSum(n) + " true");
+        }else {
+            System.out.println(digitSum(n) + " false");
+        }
     }
 
     public static int digitSum(int n) {
-        int sum = 0;
+        int result = 0;
 
         while (n > 0){
-            sum += n % 10;
-            n = n / 10;
+            result += n % 10;
+            n /= 10;
         }
-        return sum;
+        return result;
     }
 
     public static boolean isMultipleOfSeven(int n) {
-        return n % 7 == 0;
+        return digitSum(n) % 7 == 0;
     }
 }
