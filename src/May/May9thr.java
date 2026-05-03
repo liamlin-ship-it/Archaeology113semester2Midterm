@@ -23,9 +23,8 @@ class Feed{
     public void feedOnce(){
         if (feed - 25 < 25){
             this.buyFeed();
-        }else {
-            feed -= 25;
         }
+        feed -= 25;
     }
 
     public void buyFeed(){
@@ -34,14 +33,13 @@ class Feed{
             buyTimes--;
         }else {
             System.out.println("No enough feed!!");
+            System.exit(0);
         }
     }
 
-    public void remainFeed(){
-        if (buyTimes == 0){
-            buyTimes++;
-        }
-        System.out.println("Remain Feed: " + feed);
+    public int remainFeed(){
+        // if buyTimes is 0, then 0 * 100 is just 0
+        return feed + (buyTimes * 100);
     }
 }
 
@@ -50,21 +48,17 @@ public class May9thr {
         Scanner scanner = new Scanner(System.in);
 
         String name = scanner.next();
-        int feedTimes = scanner.nextInt();
+        int feedTime = scanner.nextInt();
         int buyTime = scanner.nextInt();
 
         Feed feed = new Feed(name);
 
         feed.setBuyTime(buyTime);
-        for (int i = 0; i < feedTimes; i++){
+        for (int i = 0; i < feedTime; i++){
             feed.feedOnce();
         }
 
-        if (buyTime == 0){
-            System.out.println("I have a(n) " + feed.getAnimal());
-            feed.remainFeed();
-        }else {
-            feed.buyFeed();
-        }
+        System.out.println("I have a(n) " + feed.getAnimal());
+        System.out.println("Remain Feed: " + feed.remainFeed());
     }
 }
