@@ -8,30 +8,25 @@ public class MidtermSev {
         int n = scanner.nextInt();
         int[] prices = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
             prices[i] = scanner.nextInt();
-        }
 
-        int[] newPrices = applyDiscount(prices);
+        applyDiscount(prices);
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(newPrices[i] + " ");
-        }
+        for (int i = 0; i < n; i++)
+            System.out.print(prices[i] + " ");
+
         scanner.close();
     }
 
-    public static int[] applyDiscount(int[] prices) {
-        int[] myPrice = new int[prices.length];
-
+    public static void applyDiscount(int[] prices){
         for (int i = 0; i < prices.length; i++){
-            if (prices[i] < 100){
-                myPrice[i] = prices[i];
-            } else if (100 <= prices[i] && prices[i] <= 500) {
-                myPrice[i] = (int) (prices[i] * 0.9);
-            } else if (500 < prices[i]) {
-                myPrice[i] = (int) (prices[i] * 0.8);
+            if (100 <= prices[i] && prices[i] <= 500) {
+                prices[i] = (int) (prices[i] * 0.9);
+            }
+            if (prices[i] > 500) {
+                prices[i] = (int) (prices[i] * 0.8);
             }
         }
-        return myPrice;
     }
 }
