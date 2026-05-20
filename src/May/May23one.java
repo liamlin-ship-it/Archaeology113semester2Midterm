@@ -1,3 +1,8 @@
+// If the index is even (0, 2, 4...),
+// add 1 to its value.
+// If the index is odd (1, 3, 5...),
+// keep its value unchanged.
+
 package May;
 
 import java.util.ArrayList;
