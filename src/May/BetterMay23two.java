@@ -1,33 +1,29 @@
-// Based on BetterMay23two,
-// but use HashMap instead of HashSet
-
 package May;
 
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class BetterMay23two {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        HashMap<String, Integer> nameCount = new HashMap<>();
+        HashSet<String> nameList = new HashSet<>();
+        HashSet<String> repeatList = new HashSet<>();
 
-        String name = scanner.next();
-        while (!name.equals("end")){
-            //If the name isn't in the map yet, it returns 0.
-            int currentCount = nameCount.getOrDefault(name, 0);
-            // Then we add 1 to that count and update the map.
-            nameCount.put(name, currentCount + 1);
-            name = scanner.next();
-        }
+        String input = scanner.next();
+        while (!input.equals("end")){
 
-        int repeatCount = 0;
-        for (int count : nameCount.values()){
-            if (count > 1){
-                repeatCount++;
+            // .add() returns false if theHashSet already
+            // contains the specified element.
+            // If it's a duplicate,
+            // we add it to the repeatList.
+            if (!nameList.add(input)){
+                repeatList.add(input);
             }
+
+            input = scanner.next();
         }
 
-        System.out.println(repeatCount + " " + nameCount.size());
+        System.out.println(repeatList.size() + " " + nameList.size());
         scanner.close();
     }
 }
