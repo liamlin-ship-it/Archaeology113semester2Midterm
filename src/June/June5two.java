@@ -2,10 +2,10 @@ package June;
 
 import java.util.Scanner;
 
-class Animal2 {
-    private final String name;
+class Animal3 {
+    private final String name; // 請勿修改此行
 
-    public Animal2(String name) {
+    public Animal3(String name) {
         this.name = name;
     }
 
@@ -14,7 +14,7 @@ class Animal2 {
     }
 
     void speak() {
-        System.out.println(getName() + " makes a sound.");
+        System.out.println(name + " makes a sound.");
     }
 
     public String getName() {
@@ -22,30 +22,23 @@ class Animal2 {
     }
 }
 
-class Dog2 extends Animal2 {
-    public Dog2(String name) {
-        super(name);
-    }
-}
-
-class Lion extends Animal2 {
-    public Lion(String name) {
+class Lion3 extends Animal3 {
+    public Lion3(String name) {
         super(name);
     }
 
     @Override
-    void speak(){
+    void speak() {
         System.out.println(getName() + " roars!");
     }
 }
 
-class Elephant extends Animal2 {
-    public Elephant(String name) {
+class Elephant3 extends Animal3 {
+    public Elephant3(String name) {
         super(name);
     }
 
-    @Override
-    void speak(){
+    void speak() {
         System.out.println(getName() + " trumpets!");
     }
 }
@@ -58,9 +51,9 @@ public class June5two {
         String lion = scanner.next();
         String elephant = scanner.next();
 
-        Animal2 animal1 = new Dog2(dog);
-        Animal2 animal2 = new Lion(lion);
-        Animal2 animal3 = new Elephant(elephant);
+        Animal3 animal1 = new Animal3(dog);
+        Animal3 animal2 = new Lion3(lion);
+        Animal3 animal3 = new Elephant3(elephant);
 
         animal1.showName();
         animal1.speak();
