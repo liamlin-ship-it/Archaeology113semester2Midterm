@@ -41,6 +41,8 @@ public class eig {
     private static HashSet<String> combineActivitiesExceptCancelled(ArrayList<HashSet<String>> activityLists, HashSet<String> cancelledActivities) {
         HashSet<String> result = new HashSet<>();
 
+        // Add all the course to result,
+        // then remove cancelledActivities
         for (HashSet<String> activityList : activityLists) {
             result.addAll(activityList);
         }
